@@ -9,12 +9,13 @@
 #import "GoogleApiClient.h"
 #import <UIKit+AFNetworking.h>
 #import <CoreLocation/CoreLocation.h>
+#import "PlaceFinderKeys.h"
 
 @implementation GoogleApiClient
 
 +(void)googleRequest:(NSDictionary *)query result:(void (^)(NSArray *results, NSError *error))block{
   AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-  [manager GET:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=AIzaSyDxqBNk_2AvTJxE8C1XPZqBAb7RrvaiJdk&type=bar" parameters:query progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+  [manager GET:[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/nearbysearch/json?key=%@&type=bar",GOOGLE_PLACEAPI] parameters:query progress:nil success:^(NSURLSessionTask *task, id responseObject) {
     //NSLog(@"JSON: %@", responseObject);
     NSMutableArray *outPath;
     if ([responseObject isKindOfClass:[NSArray class]]){

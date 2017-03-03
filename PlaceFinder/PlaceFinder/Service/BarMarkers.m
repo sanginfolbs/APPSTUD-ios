@@ -7,31 +7,31 @@
 //
 
 #import "BarMarkers.h"
+#import "PlaceFinderKeys.h"
 
 @implementation BarMarkers
 -(void)setBarImage:(NSString *)barImage{
   _barImage=barImage;
-  NSString *imageURL=[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?key=AIzaSyB0p05tLxi7IRZj33nYXLq78nFgiuZSr1w&photoreference=%@&maxheight=70",_barImage];
+  NSString *imageURL=[NSString stringWithFormat:@"https://maps.googleapis.com/maps/api/place/photo?key=%@&photoreference=%@&maxheight=70",GOOGLE_PLACEAPI,_barImage];
   NSURL *url = [NSURL URLWithString:imageURL];
-  NSData * imageData = [NSData dataWithContentsOfURL:url];
   self.icon=[self borderImageCircle:self.icon scaledToSize:CGSizeMake(40, 40)];
   //[self processImage:imageData];
   
-//  dispatch_queue_t callerQueue = dispatch_get_current_queue();
-//  dispatch_queue_t downloadQueue = dispatch_queue_create("com.sanginfo.processimagequeue", NULL);
-//  dispatch_async(downloadQueue, ^{
-//    NSData * imageData = [NSData dataWithContentsOfURL:url];
-//    dispatch_async(callerQueue, ^{
-//      [self processImage:imageData];
-//    });
-//  });
+  dispatch_queue_t callerQueue = dispatch_get_current_queue();
+  dispatch_queue_t downloadQueue = dispatch_queue_create("com.sanginfo.processimagequeue", NULL);
+  dispatch_async(downloadQueue, ^{
+    NSData * imageData = [NSData dataWithContentsOfURL:url];
+    dispatch_async(callerQueue, ^{
+      [self processImage:imageData];
+    });
+  });
   
   
 }
 
 -(void)processImage:(NSData *)imageData{
   NSLog(@"image Update");
-  self.icon=[UIImage imageWithData:imageData];//[self borderImageCircle:[UIImage imageWithData:imageData] scaledToSize:CGSizeMake(40, 40)];
+  self.icon=[self borderImageCircle:[UIImage imageWithData:imageData] scaledToSize:CGSizeMake(40, 40)];
 }
 
 - (UIImage *)borderImageCircle:(UIImage *)image scaledToSize:(CGSize)newSize{
