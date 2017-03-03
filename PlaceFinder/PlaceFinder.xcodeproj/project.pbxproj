@@ -25,6 +25,11 @@
 		8E3E6B601E69AF14001C1E21 /* GoogleApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3E6B5F1E69AF14001C1E21 /* GoogleApiClient.m */; };
 		8E3E6B631E69BA10001C1E21 /* BarMarkers.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3E6B621E69BA10001C1E21 /* BarMarkers.m */; };
 		8E3E6B651E69CD28001C1E21 /* dummyBaricon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E3E6B641E69CD28001C1E21 /* dummyBaricon.jpg */; };
+		8E3E6B681E69D081001C1E21 /* BarTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3E6B671E69D081001C1E21 /* BarTableViewCell.m */; };
+		8E3E6B6A1E69D161001C1E21 /* testbarimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8E3E6B691E69D161001C1E21 /* testbarimage.jpg */; };
+		8E3E6B6D1E69EF90001C1E21 /* ImageCacheManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3E6B6C1E69EF90001C1E21 /* ImageCacheManager.m */; };
+		8E3E6B701E69F00C001C1E21 /* NSString+MD5.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3E6B6F1E69F00C001C1E21 /* NSString+MD5.m */; };
+		8E3E6B731E69F4D1001C1E21 /* PlaceFinderKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3E6B721E69F4D1001C1E21 /* PlaceFinderKeys.m */; };
 		DAE46CABA1DEDD3120BD731B /* libPods-PlaceFinderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F44BBBE46892E17A585FF3 /* libPods-PlaceFinderTests.a */; };
 		DD628E1826EE966A87B6E5A5 /* libPods-PlaceFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F65E0EBFE886238CD3874FD /* libPods-PlaceFinder.a */; };
 /* End PBXBuildFile section */
@@ -81,6 +86,15 @@
 		8E3E6B611E69BA10001C1E21 /* BarMarkers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarMarkers.h; sourceTree = "<group>"; };
 		8E3E6B621E69BA10001C1E21 /* BarMarkers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarMarkers.m; sourceTree = "<group>"; };
 		8E3E6B641E69CD28001C1E21 /* dummyBaricon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = dummyBaricon.jpg; sourceTree = "<group>"; };
+		8E3E6B661E69D081001C1E21 /* BarTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BarTableViewCell.h; sourceTree = "<group>"; };
+		8E3E6B671E69D081001C1E21 /* BarTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BarTableViewCell.m; sourceTree = "<group>"; };
+		8E3E6B691E69D161001C1E21 /* testbarimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = testbarimage.jpg; sourceTree = "<group>"; };
+		8E3E6B6B1E69EF90001C1E21 /* ImageCacheManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageCacheManager.h; sourceTree = "<group>"; };
+		8E3E6B6C1E69EF90001C1E21 /* ImageCacheManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageCacheManager.m; sourceTree = "<group>"; };
+		8E3E6B6E1E69F00C001C1E21 /* NSString+MD5.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MD5.h"; sourceTree = "<group>"; };
+		8E3E6B6F1E69F00C001C1E21 /* NSString+MD5.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MD5.m"; sourceTree = "<group>"; };
+		8E3E6B711E69F4D1001C1E21 /* PlaceFinderKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceFinderKeys.h; sourceTree = "<group>"; };
+		8E3E6B721E69F4D1001C1E21 /* PlaceFinderKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceFinderKeys.m; sourceTree = "<group>"; };
 		92CCF8B23AB4FBAF68F15118 /* Pods-PlaceFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceFinderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlaceFinderTests/Pods-PlaceFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		94B520CC923CB016165D0971 /* Pods-PlaceFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlaceFinder/Pods-PlaceFinder.release.xcconfig"; sourceTree = "<group>"; };
 		C69301051EE99A2B0DC75C7A /* Pods-PlaceFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceFinderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlaceFinderTests/Pods-PlaceFinderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -153,6 +167,8 @@
 				8E0060C51E699C8400642DF0 /* MapViewController.m */,
 				8E0060C71E699C9500642DF0 /* ListViewController.h */,
 				8E0060C81E699C9500642DF0 /* ListViewController.m */,
+				8E3E6B661E69D081001C1E21 /* BarTableViewCell.h */,
+				8E3E6B671E69D081001C1E21 /* BarTableViewCell.m */,
 			);
 			path = PlaceFinder;
 			sourceTree = "<group>";
@@ -186,12 +202,18 @@
 		8E0060CA1E699E0100642DF0 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				8E3E6B6E1E69F00C001C1E21 /* NSString+MD5.h */,
+				8E3E6B6F1E69F00C001C1E21 /* NSString+MD5.m */,
 				8E0060CB1E699E2100642DF0 /* PlaceFinderLocationService.h */,
 				8E0060CC1E699E2100642DF0 /* PlaceFinderLocationService.m */,
 				8E3E6B5E1E69AF14001C1E21 /* GoogleApiClient.h */,
 				8E3E6B5F1E69AF14001C1E21 /* GoogleApiClient.m */,
 				8E3E6B611E69BA10001C1E21 /* BarMarkers.h */,
 				8E3E6B621E69BA10001C1E21 /* BarMarkers.m */,
+				8E3E6B6B1E69EF90001C1E21 /* ImageCacheManager.h */,
+				8E3E6B6C1E69EF90001C1E21 /* ImageCacheManager.m */,
+				8E3E6B711E69F4D1001C1E21 /* PlaceFinderKeys.h */,
+				8E3E6B721E69F4D1001C1E21 /* PlaceFinderKeys.m */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -199,6 +221,7 @@
 		8E3E6B551E69AB0D001C1E21 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				8E3E6B691E69D161001C1E21 /* testbarimage.jpg */,
 				8E3E6B641E69CD28001C1E21 /* dummyBaricon.jpg */,
 				8E3E6B561E69AB0D001C1E21 /* blue-dot.png */,
 				8E3E6B571E69AB0D001C1E21 /* blue-dot@2x.png */,
@@ -351,6 +374,7 @@
 			files = (
 				8E3E6B5D1E69AB0D001C1E21 /* button_my_location@2x.png in Resources */,
 				8E3E6B651E69CD28001C1E21 /* dummyBaricon.jpg in Resources */,
+				8E3E6B6A1E69D161001C1E21 /* testbarimage.jpg in Resources */,
 				8E0060A11E699C1200642DF0 /* LaunchScreen.storyboard in Resources */,
 				8E3E6B5B1E69AB0D001C1E21 /* blue-dot@2x.png in Resources */,
 				8E00609E1E699C1200642DF0 /* Assets.xcassets in Resources */,
@@ -521,9 +545,13 @@
 			files = (
 				8E3E6B601E69AF14001C1E21 /* GoogleApiClient.m in Sources */,
 				8E0060C61E699C8400642DF0 /* MapViewController.m in Sources */,
+				8E3E6B701E69F00C001C1E21 /* NSString+MD5.m in Sources */,
 				8E0060CD1E699E2100642DF0 /* PlaceFinderLocationService.m in Sources */,
 				8E0060931E699C1200642DF0 /* AppDelegate.m in Sources */,
+				8E3E6B6D1E69EF90001C1E21 /* ImageCacheManager.m in Sources */,
 				8E3E6B631E69BA10001C1E21 /* BarMarkers.m in Sources */,
+				8E3E6B731E69F4D1001C1E21 /* PlaceFinderKeys.m in Sources */,
+				8E3E6B681E69D081001C1E21 /* BarTableViewCell.m in Sources */,
 				8E0060C91E699C9500642DF0 /* ListViewController.m in Sources */,
 				8E0060901E699C1200642DF0 /* main.m in Sources */,
 			);
