@@ -9,10 +9,12 @@
 #import "MapViewController.h"
 #import "PlaceFinderLocationService.h"
 #import <GoogleMaps/GoogleMaps.h>
+#import "GoogleApiClient.h"
+#import "BarMarkers.h"
 
 @interface MapViewController ()<PlaceFinderLocationDelegate>
 @property (weak, nonatomic) IBOutlet GMSMapView *vwGoogleMap;
-
+@property (retain, nonatomic)  NSMutableArray<BarMarkers *> *listPlaces;
 @end
 
 @implementation MapViewController{
@@ -25,6 +27,8 @@
     // Do any additional setup after loading the view.
   locationUpdate=[[PlaceFinderLocationService alloc] init];
   locationUpdate.delegate=self;
+  [self.listPlaces removeAllObjects];
+  
 }
 
 - (void)didReceiveMemoryWarning {
@@ -55,11 +59,53 @@
     blueDot.position=currentLocation;
     blueDot.icon=[UIImage imageNamed:@"blue-dot.png"];
     blueDot.map=self.vwGoogleMap;
-    GMSCameraPosition *lastCameraPosition=self.vwGoogleMap.camera;
-    self.vwGoogleMap.camera=[GMSCameraPosition cameraWithLatitude:blueDot.position.latitude longitude:blueDot.position.longitude zoom:lastCameraPosition.zoom];
+    
+    self.vwGoogleMap.camera=[GMSCameraPosition cameraWithLatitude:blueDot.position.latitude longitude:blueDot.position.longitude zoom:15.00];
+    [self fetchPlaces:currentLocation];
   }
   else{
     blueDot.position=currentLocation;
   }
+}
+#pragma mark Google Places api
+-(void)fetchPlaces:(CLLocationCoordinate2D)currentLocation{
+  NSString *locationString=[NSString stringWithFormat:@"%f,%f",currentLocation.latitude,currentLocation.longitude];
+  NSDictionary *queryParameter=[NSDictionary dictionaryWithObjectsAndKeys:locationString,@"location",@2000,@"radius", nil];
+  [GoogleApiClient googleRequest:queryParameter result:^(NSArray *results, NSError *error) {
+    if(error==nil){
+      NSLog(@"%@",results);
+      for (GMSMarker *item in self.listPlaces) {
+        item.map=nil;
+      }
+      [self.listPlaces removeAllObjects];
+      NSArray *arrTempInfo=[results[0] objectForKey:@"results"];
+      for (NSDictionary *info in arrTempInfo) {
+        BarMarkers *mark=[self createPlaceMarker:info];
+        if(mark!=nil){
+          mark.map=self.vwGoogleMap;
+          [self.listPlaces addObject:mark];
+        }
+      }
+    }
+    
+  }];
+}
+
+-(BarMarkers *)createPlaceMarker:(NSDictionary *)placeInfo{
+  BarMarkers *placeMarker=[[BarMarkers alloc] init];
+  placeMarker.icon=[UIImage imageNamed:@"dummyBaricon.jpg"];
+  if([[placeInfo objectForKey:@"photos"] count]>0){
+    NSDictionary *photo=[placeInfo objectForKey:@"photos"][0];
+    placeMarker.barImage=[photo objectForKey:@"photo_reference"];
+  }
+  else{
+  //Not to display on map
+    return nil;
+  }
+  
+  NSDictionary *location=[[placeInfo objectForKey:@"geometry"] objectForKey:@"location"];
+  placeMarker.position=CLLocationCoordinate2DMake([[location objectForKey:@"lat"] doubleValue], [[location objectForKey:@"lng"] doubleValue]);
+  return placeMarker;
+  
 }
 @end
