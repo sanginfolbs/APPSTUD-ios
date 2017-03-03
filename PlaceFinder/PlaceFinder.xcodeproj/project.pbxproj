@@ -18,6 +18,11 @@
 		8E0060C61E699C8400642DF0 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0060C51E699C8400642DF0 /* MapViewController.m */; };
 		8E0060C91E699C9500642DF0 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0060C81E699C9500642DF0 /* ListViewController.m */; };
 		8E0060CD1E699E2100642DF0 /* PlaceFinderLocationService.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0060CC1E699E2100642DF0 /* PlaceFinderLocationService.m */; };
+		8E3E6B5A1E69AB0D001C1E21 /* blue-dot.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E3E6B561E69AB0D001C1E21 /* blue-dot.png */; };
+		8E3E6B5B1E69AB0D001C1E21 /* blue-dot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E3E6B571E69AB0D001C1E21 /* blue-dot@2x.png */; };
+		8E3E6B5C1E69AB0D001C1E21 /* button_my_location.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E3E6B581E69AB0D001C1E21 /* button_my_location.png */; };
+		8E3E6B5D1E69AB0D001C1E21 /* button_my_location@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8E3E6B591E69AB0D001C1E21 /* button_my_location@2x.png */; };
+		8E3E6B601E69AF14001C1E21 /* GoogleApiClient.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E3E6B5F1E69AF14001C1E21 /* GoogleApiClient.m */; };
 		DAE46CABA1DEDD3120BD731B /* libPods-PlaceFinderTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D3F44BBBE46892E17A585FF3 /* libPods-PlaceFinderTests.a */; };
 		DD628E1826EE966A87B6E5A5 /* libPods-PlaceFinder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F65E0EBFE886238CD3874FD /* libPods-PlaceFinder.a */; };
 /* End PBXBuildFile section */
@@ -65,6 +70,12 @@
 		8E0060C81E699C9500642DF0 /* ListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		8E0060CB1E699E2100642DF0 /* PlaceFinderLocationService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaceFinderLocationService.h; sourceTree = "<group>"; };
 		8E0060CC1E699E2100642DF0 /* PlaceFinderLocationService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaceFinderLocationService.m; sourceTree = "<group>"; };
+		8E3E6B561E69AB0D001C1E21 /* blue-dot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-dot.png"; sourceTree = "<group>"; };
+		8E3E6B571E69AB0D001C1E21 /* blue-dot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "blue-dot@2x.png"; sourceTree = "<group>"; };
+		8E3E6B581E69AB0D001C1E21 /* button_my_location.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button_my_location.png; sourceTree = "<group>"; };
+		8E3E6B591E69AB0D001C1E21 /* button_my_location@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button_my_location@2x.png"; sourceTree = "<group>"; };
+		8E3E6B5E1E69AF14001C1E21 /* GoogleApiClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GoogleApiClient.h; sourceTree = "<group>"; };
+		8E3E6B5F1E69AF14001C1E21 /* GoogleApiClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GoogleApiClient.m; sourceTree = "<group>"; };
 		92CCF8B23AB4FBAF68F15118 /* Pods-PlaceFinderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceFinderTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PlaceFinderTests/Pods-PlaceFinderTests.debug.xcconfig"; sourceTree = "<group>"; };
 		94B520CC923CB016165D0971 /* Pods-PlaceFinder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceFinder.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlaceFinder/Pods-PlaceFinder.release.xcconfig"; sourceTree = "<group>"; };
 		C69301051EE99A2B0DC75C7A /* Pods-PlaceFinderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlaceFinderTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PlaceFinderTests/Pods-PlaceFinderTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -124,6 +135,7 @@
 		8E00608D1E699C1200642DF0 /* PlaceFinder */ = {
 			isa = PBXGroup;
 			children = (
+				8E3E6B551E69AB0D001C1E21 /* images */,
 				8E0060CA1E699E0100642DF0 /* Service */,
 				8E0060911E699C1200642DF0 /* AppDelegate.h */,
 				8E0060921E699C1200642DF0 /* AppDelegate.m */,
@@ -171,8 +183,21 @@
 			children = (
 				8E0060CB1E699E2100642DF0 /* PlaceFinderLocationService.h */,
 				8E0060CC1E699E2100642DF0 /* PlaceFinderLocationService.m */,
+				8E3E6B5E1E69AF14001C1E21 /* GoogleApiClient.h */,
+				8E3E6B5F1E69AF14001C1E21 /* GoogleApiClient.m */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		8E3E6B551E69AB0D001C1E21 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				8E3E6B561E69AB0D001C1E21 /* blue-dot.png */,
+				8E3E6B571E69AB0D001C1E21 /* blue-dot@2x.png */,
+				8E3E6B581E69AB0D001C1E21 /* button_my_location.png */,
+				8E3E6B591E69AB0D001C1E21 /* button_my_location@2x.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 		B397DBF06C5D8EA80137CFF5 /* Pods */ = {
@@ -316,9 +341,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3E6B5D1E69AB0D001C1E21 /* button_my_location@2x.png in Resources */,
 				8E0060A11E699C1200642DF0 /* LaunchScreen.storyboard in Resources */,
+				8E3E6B5B1E69AB0D001C1E21 /* blue-dot@2x.png in Resources */,
 				8E00609E1E699C1200642DF0 /* Assets.xcassets in Resources */,
 				8E00609C1E699C1200642DF0 /* Main.storyboard in Resources */,
+				8E3E6B5C1E69AB0D001C1E21 /* button_my_location.png in Resources */,
+				8E3E6B5A1E69AB0D001C1E21 /* blue-dot.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -481,6 +510,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E3E6B601E69AF14001C1E21 /* GoogleApiClient.m in Sources */,
 				8E0060C61E699C8400642DF0 /* MapViewController.m in Sources */,
 				8E0060CD1E699E2100642DF0 /* PlaceFinderLocationService.m in Sources */,
 				8E0060931E699C1200642DF0 /* AppDelegate.m in Sources */,

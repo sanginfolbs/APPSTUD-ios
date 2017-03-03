@@ -15,7 +15,7 @@
 
 @end
 @interface PlaceFinderLocationService : NSObject
-  @property (nonatomic, weak) id <PlaceFinderLocationDelegate> Delegate;
+  @property (nonatomic, weak) id <PlaceFinderLocationDelegate> delegate;
   
 
 @end

@@ -7,16 +7,24 @@
 //
 
 #import "MapViewController.h"
+#import "PlaceFinderLocationService.h"
+#import <GoogleMaps/GoogleMaps.h>
 
-@interface MapViewController ()
+@interface MapViewController ()<PlaceFinderLocationDelegate>
+@property (weak, nonatomic) IBOutlet GMSMapView *vwGoogleMap;
 
 @end
 
-@implementation MapViewController
+@implementation MapViewController{
+  PlaceFinderLocationService * locationUpdate;
+  GMSMarker *blueDot;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+  locationUpdate=[[PlaceFinderLocationService alloc] init];
+  locationUpdate.delegate=self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +41,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)onTapLocateMe:(UIButton *)sender {
+  if(blueDot!=nil){
+    GMSCameraPosition *lastCameraPosition=self.vwGoogleMap.camera;
+    [self.vwGoogleMap animateToCameraPosition:[GMSCameraPosition cameraWithLatitude:blueDot.position.latitude longitude:blueDot.position.longitude zoom:lastCameraPosition.zoom]];
+  }
+}
 
+#pragma mark Location Update
+-(void) PlaceFinderLocation:(id)sender andLocation:(CLLocationCoordinate2D)currentLocation{
+  if(blueDot==nil){
+    blueDot=[[GMSMarker alloc] init];
+    blueDot.position=currentLocation;
+    blueDot.icon=[UIImage imageNamed:@"blue-dot.png"];
+    blueDot.map=self.vwGoogleMap;
+    GMSCameraPosition *lastCameraPosition=self.vwGoogleMap.camera;
+    self.vwGoogleMap.camera=[GMSCameraPosition cameraWithLatitude:blueDot.position.latitude longitude:blueDot.position.longitude zoom:lastCameraPosition.zoom];
+  }
+  else{
+    blueDot.position=currentLocation;
+  }
+}
 @end

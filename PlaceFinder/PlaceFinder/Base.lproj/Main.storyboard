@@ -16,9 +16,28 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" id="gCu-IY-9nm" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="541"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="jB2-6d-Yd2">
+                                <rect key="frame" x="314" y="559" width="46" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <rect key="contentStretch" x="1" y="1" width="0.0" height="0.0"/>
+                                <state key="normal" image="button_my_location.png"/>
+                                <connections>
+                                    <action selector="onTapLocateMe:" destination="9pv-A4-QxB" eventType="touchUpInside" id="MUe-vV-Ext"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="q4a-03-JjI"/>
+                    <connections>
+                        <outlet property="vwGoogleMap" destination="gCu-IY-9nm" id="dy6-ah-M6n"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -98,6 +117,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="button_my_location.png" width="46" height="46"/>
         <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
